@@ -1,4 +1,4 @@
-import { LABEL } from '@/constants';
+import { LABEL } from '@/constants/admin';
 
 type CustomerInfoProps = {
   customerCount: number;
