@@ -77,11 +77,11 @@ jobs:
 
       # 3. Docker 이미지 빌드
       - name: Build
-        run : docker build --platform linux/amd64 -t ${{ secrets.DOCKERHUB_USERNAME }}/schedule-hanaro-client -f ./DockerFile .
+        run : docker build --platform linux/amd64 -t ${{ secrets.DOCKERHUB_USERNAME }}/alert -f ./DockerFile .
 
        # 3. Docker 이미지 빌드
       - name: push
-        run: docker push ${{ secrets.DOCKERHUB_USERNAME }}/schedule-hanaro-client
+        run: docker push ${{ secrets.DOCKERHUB_USERNAME }}/alert
         
       # 5. SSH로 EC2에 접속하여 배포
       - name: Deploy to EC2
