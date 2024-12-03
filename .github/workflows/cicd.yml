@@ -46,15 +46,9 @@ jobs:
 
      # 5. SSH로 EC2에 접속하여 Application 실행
       - name: Connect to EC2 & Execute Application
-        uses: appleboy/ssh-action@v0.1.8
+        uses: appleboy/ssh-action@v1.0.0
         with:
-          host: ${{ secrets.EC2_HOST }}
-          username: ubuntu
           key: ${{ secrets.EC2_SSH_KEY }}
-          port: 22
-          script: |
-            whoami
-            # docker stop $(docker ps -a -q) 
-            # docker rm $(docker ps -a -q) 
-            # docker pull ${{ secrets.DOCKERHUB_USERNAME }}/schedulehanaro
-            # docker run -d -p 80:80 --name schedulehanaro ${{ secrets.DOCKER_USERNAME }}/schedulehanaro
+          host: ${{ secrets.EC2_HOST }}
+          username: ${{ ubuntu }}
+          port: ${{ 22 }}
