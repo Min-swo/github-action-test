@@ -55,5 +55,5 @@ jobs:
           script: |
             docker stop $(docker ps -a -q) 
             docker rm $(docker ps -a -q) 
-            docker pull ${{ secrets.DOCKERHUB_USERNAME }}/schedulehanaro
+            docker pull ${{ secrets.DOCKER_USERNAME }}/schedulehanaro
             docker run -d -p 80:80 --name schedulehanaro ${{ secrets.DOCKER_USERNAME }}/schedulehanaro
