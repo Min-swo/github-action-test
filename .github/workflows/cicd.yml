@@ -42,7 +42,7 @@ jobs:
 
       # docker hub 퍼블리시
       - name: Publish to docker hub
-        run: docker push ${{ secrets.DOCKERHUB_USERNAME }}/schedulehanaro
+        run: docker push ${{ secrets.DOCKER_USERNAME }}/schedulehanaro
 
      # 5. SSH로 EC2에 접속하여 Application 실행
       - name: Connect to EC2 & Execute Application
